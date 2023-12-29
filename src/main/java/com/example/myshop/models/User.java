@@ -25,6 +25,6 @@ public class User {
     private LocalDate dob;
     private boolean gender;
     private String avatar;
-    private List<Role> roles;
+    private String role;
 
 }
