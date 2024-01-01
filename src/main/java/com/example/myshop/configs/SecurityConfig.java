@@ -41,7 +41,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(author -> {
-                    author.requestMatchers("/api/test/home", "/api/auth/**").permitAll();
+                    author.requestMatchers("/api/test/home", "/api/auth/**", "/mail/**").permitAll();
                     author.requestMatchers("/api/test/user").hasRole("USER");
                     author.anyRequest().authenticated();
                 })

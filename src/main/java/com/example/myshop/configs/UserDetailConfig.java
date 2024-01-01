@@ -20,11 +20,11 @@ public class UserDetailConfig implements UserDetails {
     private String password;
     private List<GrantedAuthority> authorities;
 
+
     public UserDetailConfig(User user) {
         this.email = user.getEmail();
         this.password = user.getPassword();
         this.authorities = List.of(new SimpleGrantedAuthority(user.getRole()));
-
     }
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
