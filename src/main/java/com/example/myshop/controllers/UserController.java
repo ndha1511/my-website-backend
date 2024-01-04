@@ -9,11 +9,10 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/user")
 @RequiredArgsConstructor
-@CrossOrigin(originPatterns = {"http://localhost:3000"})
 public class UserController {
     private final UserService userService;
 
-    @GetMapping("/findByEmail/{email}")
+    @GetMapping("/{email}")
     public ResponseEntity<User> findByEmail(@PathVariable("email") String email) {
         return ResponseEntity.ok(userService.findByEmail(email));
     }
